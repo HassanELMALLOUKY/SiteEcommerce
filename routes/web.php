@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name('home');
+Route::get('/panier/{id}',[\App\Http\Controllers\HomeController::class,'panier'])->name('panier');
+//Route::post('/checkout', [App\Http\Controllers\HometController::class, 'payment'])
+//    ->name('payment');
